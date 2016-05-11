@@ -26,6 +26,15 @@
  - 允许 root 账号登录
     - 注释掉：`PermitRootLogin without-password`
     - 新增一行：`PermitRootLogin yes`
+## 安全性考虑 一般禁用root登陆
+-通过useradd xuchg 添加新用户
+-通过passwd xuchg 给xuchg用户设置密码
+-编辑配置文件 'sudo vim /etc/ssh/sshd_config'
+  -PermitRootLogin no
+给xuchg用户启用sudo命令
+ -1.切换到root用户，运行 visudo 命令
+ -2.找到这个行 'root ALL=(ALL) ALL' 复制 并把root改成xuchg
+ -3.退出保存
     
 ## SSH 密钥登录
 
